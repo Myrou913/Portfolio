@@ -1,20 +1,107 @@
-# Mariem Sebai Portfolio
+# Mariem Sebai — Portfolio
 
-## Start locally
+A personal portfolio showcasing my projects, certificates, and skills as a full-stack developer. Built with React and Vite, backed by Supabase for public comments and Formspree for private contact messages.
 
-Run `npm install`, then `npm run dev`.
+**Live site:** [myrou913.vercel.app](https://myrou913.vercel.app) *(update after deployment)*
 
-## Add real assets
+---
 
-- Add the exploded laptop video as `public/assets/laptop-exploded.mp4`.
-- Add certificate images/PDF previews in `public/certificates/`, then populate the certificate data in `src/main.jsx`.
-- Add demo videos in `public/demos/`, then give each project a video source in `src/main.jsx`.
-- A portrait can be placed in `public/assets/portrait.jpg` when one is available.
+## Projects featured
 
-## Secure contact delivery
+| # | Project | Type |
+|---|---------|------|
+| 01 | **SCOC** | Complaint management platform |
+| 02 | **UrgentFlow** | Healthcare emergency interface |
+| 03 | **ShopFlow** | E-commerce marketplace |
+| 04 | **Pomodoro Timer** | Focus productivity tool |
 
-The contact form intentionally contains no email-service credentials. Create a Formspree form (or replace it with your own server endpoint), then set `VITE_FORMSPREE_ENDPOINT` in a local `.env` file, for example:
+---
 
-`VITE_FORMSPREE_ENDPOINT=https://formspree.io/f/your-form-id`
+## Tech stack
 
-The public comment area works as a browser-local preview until a database is connected. For public, cross-device comments, connect it to a protected backend (for example, a Supabase Edge Function with rate limiting and moderation) rather than exposing database keys in the browser.
+- **Framework:** React 18 + Vite
+- **Styling:** Plain CSS (custom design system)
+- **Backend / DB:** Supabase (public comments)
+- **Contact form:** Formspree
+- **Hosting:** Vercel
+
+---
+
+## Getting started
+
+### Prerequisites
+
+- Node.js 18+
+- A [Supabase](https://supabase.com) project with a `comments` table
+- A [Formspree](https://formspree.io) form endpoint
+
+### Environment variables
+
+Copy `.env.example` to `.env` and fill in your values:
+
+```bash
+cp .env.example .env
+```
+
+```env
+VITE_FORMSPREE_ENDPOINT=https://formspree.io/f/your-form-id
+```
+
+For Supabase, add these two variables as well (from your project settings → API):
+
+```env
+VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_ANON_KEY=your-anon-key
+```
+
+### Install and run
+
+```bash
+npm install
+npm run dev
+```
+
+### Build for production
+
+```bash
+npm run build
+```
+
+---
+
+## Supabase setup
+
+Create a `comments` table in your Supabase project with the following columns:
+
+| Column | Type | Notes |
+|--------|------|-------|
+| `id` | `uuid` | Primary key, default `gen_random_uuid()` |
+| `name` | `text` | Required |
+| `text` | `text` | Required, max 280 chars |
+| `created_at` | `timestamptz` | Default `now()` |
+
+Enable Row Level Security and add a policy to allow anonymous inserts and reads.
+
+---
+
+## Deploying to Vercel
+
+1. Push this repo to GitHub
+2. Go to [vercel.com](https://vercel.com) → New Project → import the repo
+3. Vercel auto-detects Vite — no build config changes needed
+4. Add your environment variables under **Settings → Environment Variables**
+5. Deploy
+
+Every push to `main` triggers an automatic redeploy.
+
+---
+
+## Contact
+
+- **Email:** mariemsebai913@gmail.com
+- **LinkedIn:** [mariem-sebai-009260342](https://www.linkedin.com/in/mariem-sebai-009260342/)
+- **GitHub:** [Myrou913](https://github.com/Myrou913)
+
+---
+
+© 2025 Mariem Sebai — Made with care.
