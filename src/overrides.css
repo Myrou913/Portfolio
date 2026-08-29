@@ -1,0 +1,106 @@
+/* Last-pass layout and media refinements. */
+.nav { position: fixed; background: linear-gradient(180deg, #111011f2 0%, #111011c9 72%, transparent 100%); backdrop-filter: blur(10px); }
+.nav nav button.active { color: var(--pink); }
+.nav nav button.active:after { content: ""; display: block; height: 1px; width: 100%; margin-top: 5px; background: var(--pink); }
+.section { scroll-margin-top: 0; }
+
+.hero { min-height: 100vh; padding-top: 110px; }
+.hero-grid { margin-top: 24px; }
+.scroll-hint { bottom: 24px; }
+.about, .work, .certificates { padding-top: clamp(40px, 5vw, 70px); }
+.about-grid, .certificate-copy { margin-top: 18px; }
+.about-grid { margin-top: 0; }
+
+.portrait-visual img {
+  width: min(390px, 82%); height: 88%; object-fit: cover; object-position: center 8%;
+  border: 1px solid #ff4da18c; border-radius: 32px; transform: translateY(-30px);
+}
+.portrait-visual:before { display: none; }
+
+/* ── About section video — bars clipped, scaled up ── */
+.about-video {
+  position: relative;
+  margin: 0 auto;
+  width: min(380px, 100%);
+  overflow: hidden;
+  height: 0;
+  padding-bottom: 105%;
+  display: block;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.about-video::before { display: none; }
+.about-video::after  { display: none; }
+
+.about-video video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.25);
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  filter: none;
+}
+
+.about-video figcaption {
+  position: absolute;
+  right: 0;
+  bottom: 12px;
+  left: 0;
+  text-align: center;
+  font: 10px var(--mono);
+  color: var(--pink);
+  letter-spacing: .14em;
+  z-index: 2;
+}
+
+/* ── Socials, certificates, stack ── */
+.socials a { width: 38px; height: 38px; }
+.socials a img { width: 20px; height: 20px; object-fit: contain; filter: brightness(0) invert(1); }
+
+.certificate-copy { max-width: 1200px; margin-left: auto; margin-right: auto; }
+.certificate-card { appearance: none; display: block; line-height: 0; }
+.certificate-card img { vertical-align: middle; object-position: center; }
+.meta-certificate img { margin-top: -32px; object-position: top; }
+.certificate-card span, .certificate-card h3, .certificate-card p { line-height: normal; }
+
+.section-head { display: block; }
+.section-head p { width: min(430px, 100%); margin: 24px 0 0; }
+
+.stack-icons { align-items: flex-start; gap: 18px; }
+.stack-icon { display: flex; width: 88px; flex-direction: column; align-items: center; gap: 0; }
+.stack-icon img { display: block; margin-bottom: 8px; }
+.stack-icon span { display: block; min-height: 24px; line-height: 1.2; }
+
+/* back-to-top button */
+.back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 8;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: var(--pink);
+  color: #fff;
+  font-family: var(--sans);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1;
+  box-shadow: 0 8px 24px #0006;
+  transition: transform .25s ease;
+}
+.back-to-top:hover { transform: translateY(-3px); }
+
+@media (max-width: 760px) {
+  .portrait-visual img { height: 88%; }
+  .about-video { width: min(240px, 80%); }
+}
