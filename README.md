@@ -2,7 +2,7 @@
 
 A personal portfolio showcasing my projects, certificates, and skills as a full-stack developer. Built with React and Vite, backed by Supabase for public comments and Formspree for private contact messages.
 
-**Live site:** [myrou913.vercel.app](https://myrou913.vercel.app) *(update after deployment)*
+**Live site:** [portfolio-d7pr.vercel.app](https://portfolio-d7pr.vercel.app)
 
 ---
 
