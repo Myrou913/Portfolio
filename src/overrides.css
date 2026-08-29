@@ -60,7 +60,8 @@
 .socials a { width: 38px; height: 38px; }
 .socials a img { width: 20px; height: 20px; object-fit: contain; filter: brightness(0) invert(1); }
 
-.certificate-copy { max-width: 1200px; margin-left: auto; margin-right: auto; }
+.certificate-copy { max-width: 1200px; margin-left: auto; margin-right: auto; margin-top: 0; }
+.certificates > .section-label { max-width: 1200px; margin-left: auto; margin-right: auto; display: block; }
 .certificate-card { appearance: none; display: block; line-height: 0; }
 .certificate-card img { vertical-align: middle; object-position: center; }
 .meta-certificate img { margin-top: -32px; object-position: top; }
@@ -113,4 +114,25 @@
 
 .project-info button b {
   font-style: normal;
+}
+
+/* Download CV button */
+.cv-button {
+  gap: 16px;
+  transition: background .25s, color .25s, transform .25s, border-color .25s;
+}
+.cv-button:hover {
+  background: var(--pink);
+  color: #171014;
+  border-color: var(--pink);
+  transform: translateY(-3px);
+}
+.cv-arrow {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--pink);
+  transition: color .25s;
+}
+.cv-button:hover .cv-arrow {
+  color: #171014;
 }
