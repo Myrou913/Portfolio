@@ -101,3 +101,16 @@
   .portrait-visual img { height: 88%; }
   .about-visual { width: min(360px, 100%); }
 }
+
+/* Fix arrow emoji rendering on iOS Safari */
+.project-info button b,
+.button b,
+.text-link span,
+.contact-intro > a span,
+.nav-cta {
+  font-family: var(--sans);
+}
+
+.project-info button b {
+  font-style: normal;
+}
