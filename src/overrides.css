@@ -17,46 +17,43 @@
 }
 .portrait-visual:before { display: none; }
 
-/* ── About section video — bars clipped, scaled up ── */
-.about-video {
+/* ── About section presentation image ── */
+.about-visual {
   position: relative;
   margin: 0 auto;
-  width: min(380px, 100%);
-  overflow: hidden;
-  height: 0;
-  padding-bottom: 105%;
+  width: min(440px, 100%);
+  aspect-ratio: 4 / 3;
   display: block;
-  background: transparent;
-  border: none;
-  box-shadow: none;
+  isolation: isolate;
 }
 
-.about-video::before { display: none; }
-.about-video::after  { display: none; }
-
-.about-video video {
+.about-visual::before {
+  content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1.25);
+  z-index: -1;
+  top: 14px;
+  right: -58px;
+  bottom: -18px;
+  left: 28px;
+  border-radius: 34px;
+  background: radial-gradient(
+    ellipse at 92% 50%,
+    #ff4da199 0%,
+    #ff4da15c 42%,
+    transparent 76%
+  );
+  filter: blur(85px);
+}
+
+.about-visual img {
+  display: block;
   width: 100%;
-  height: auto;
-  border-radius: 0;
-  box-shadow: none;
-  border: none;
-  filter: none;
-}
-
-.about-video figcaption {
-  position: absolute;
-  right: 0;
-  bottom: 12px;
-  left: 0;
-  text-align: center;
-  font: 10px var(--mono);
-  color: var(--pink);
-  letter-spacing: .14em;
-  z-index: 2;
+  height: 100%;
+  object-fit: cover;
+  object-position: 48% center;
+  border: 1px solid #ff4da18c;
+  border-radius: 32px;
+  box-shadow: 0 22px 48px #0009, 0 0 48px #ff4da14d;
 }
 
 /* ── Socials, certificates, stack ── */
@@ -102,5 +99,5 @@
 
 @media (max-width: 760px) {
   .portrait-visual img { height: 88%; }
-  .about-video { width: min(240px, 80%); }
+  .about-visual { width: min(360px, 100%); }
 }

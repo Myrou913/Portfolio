@@ -22,7 +22,7 @@ const stack = [
 ];
 
 function Portrait() { return <figure className="portrait-visual"><div className="portrait-glow" /><img src="/assets/maryem-portrait.jpeg" alt="Mariem Sebai" /><figcaption>mariem sebai / full-stack developer</figcaption></figure>; }
-function AboutVisual() { return <figure className="about-video"><video autoPlay muted loop playsInline aria-label="Animated humanoid robot"><source src="/assets/Robot.mp4" type="video/mp4" /></video></figure>; }
+function AboutVisual() { return <figure className="about-visual"><img src="/assets/about-presentation.jpeg" alt="Mariem Sebai giving a presentation" /></figure>; }
 
 function App() {
   const [activeProject, setActiveProject] = useState(null);
